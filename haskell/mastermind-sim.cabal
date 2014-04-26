@@ -1,0 +1,31 @@
+Name:                mastermind-sim
+Version:             1.0
+Synopsis:            A simulation of a mastermind variation to test the fitness of various bots
+Homepage:            https://github.com/eugenkiss/mastermind-hs
+License:             BSD3
+License-file:        LICENSE
+Author:              Eugen Kiss
+Maintainer:          eugen@eugenkiss.com
+Stability:           Provisional
+Category:            Misc
+Build-type:          Simple
+Extra-source-files:  README.mkd
+Cabal-version:       >=1.6
+Description:         
+
+    This is a mastermind (-variation) simulation which is intended to be used
+    for comparing mastermind strategies. Particularly important in this
+    simulation is not only to have an algorithm that needs a minimal amount of
+    tries to determine the secret code but also the time efficiency of said
+    algorithm.
+
+source-repository head
+  type:     git
+  location: https://github.com/eugenkiss/mastermind-hs
+
+Executable mastermind-sim
+  Main-is:       Main.hs          
+  Build-depends: base >= 4,
+                 containers, 
+                 mtl, 
+                 random

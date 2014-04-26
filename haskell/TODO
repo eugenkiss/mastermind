@@ -1,0 +1,55 @@
+TODO
+====
+
+Outlook
+-------
+
+### Version 1.1
+
+- Create benchmark suite with criterion
+- Use a data structure that is O(1) in length (memorize length?)
+    - Some strategies need to compute the length of a list quite often
+- Think of a cheaper way to get the number of parts for the mostparts strategy
+  than to use the equality operator on these long lists
+    - Keyword: Hashing, look at Lua version
+- Check if performance has been improved
+
+
+
+Questions
+---------
+
+These are gathered questions that came up when writing this projects. If you
+can and want to answer some of these questions send me a mail. I would
+appreciate it. Maybe I can answer some of these questions myself in the
+future...
+
+Q: Is it possible to write such a function (see also the `packStrategy`
+function in `Simulation.hs`?
+
+    takeWhileM :: (Monad m) => (a -> Bool) -> [m a] -> [m a]
+
+Q: The `sumStats` function in `Main.hs` is written imperatively. Is it possible
+to write this function in a more idiomatic and more beautiful style? How?
+
+Q: Is there an easy way apart from memoization to avoid the needless
+recomputation of all codes in the `initializeStrategyState` function on line 60
+in `Strategies/Util.hs`?
+
+Q: Is it possible to statically enforce that both codes of the `compareCodes`
+function must have the same length (dependant types?)? If yes, how much hassle
+would it be?
+
+Q: What style improvements can be applied to the code?
+
+Q: Which language extensions could improve my code?
+
+Q: Which changes in my code/data structures can improve the performance of the
+simulation?
+
+Q: How can I hide the IO Monad in the simulation better? I only need to get the
+CPUTime. How can I properly force the evaluation of a strategies guess (see
+the `stepState` function in `Simulation.hs`)? This way I could avoid the IO
+Monad in `App` (in `Simulation.hs`) since its only purpose is the strict
+evaluation of a guess. But at the same time I want the progress bar to still
+work.
